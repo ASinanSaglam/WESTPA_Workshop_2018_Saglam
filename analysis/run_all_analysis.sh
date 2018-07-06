@@ -1,3 +1,4 @@
+source ../../../../westpa.sh
 WESTH5_FILE=$1
 ## assignment first, need to assign to original voronoi bins
 w_assign -W $WESTH5_FILE --states-from-file states_8dims.yaml || exit 1
