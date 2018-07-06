@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# init.sh
+#
+
+source env.sh
+
+rm -rf traj_segs seg_logs istates west.h5 
+mkdir   seg_logs traj_segs istates
+
+cp $WEST_SIM_ROOT/bngl_conf/init.net bstates/0.net
+
+BSTATE_ARGS="--bstate-file bstates/bstates.txt"
+#TSTATE_ARGS="--tstate bound,1.0"
+  #$BSTATE_ARGS $TSTATE_ARGS \
+
+$WEST_ROOT/bin/w_init \
+  $BSTATE_ARGS \
+  --segs-per-state 10 \
+  --work-manager=threads "$@"
