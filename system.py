@@ -10,9 +10,6 @@ log = logging.getLogger(__name__)
 log.debug('loading module %r' % __name__)
 
 def dfunc(p, centers):
-    #print("Dfunc called")
-    #print(p, centers)
-    #print(p.shape, centers.shape)
     ds = cdist(np.array([p]),centers)
     return np.array(ds[0], dtype=p.dtype)
 

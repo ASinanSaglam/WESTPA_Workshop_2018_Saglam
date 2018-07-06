@@ -8,19 +8,10 @@ if [ -n "$SEG_DEBUG" ] ; then
 fi
 
 ######################## Set up for running the dynamics #######################
-
 # Set up the directory where data for this segment will be stored.
 cd $WEST_SIM_ROOT
-
-#if [[ -n $SCRATCH ]];then
-#  mkdir -pv $WEST_CURRENT_SEG_DATA_REF
-#  mkdir -pv ${SCRATCH}/$WEST_CURRENT_SEG_DATA_REF
-#  cd ${SCRATCH}/$WEST_CURRENT_SEG_DATA_REF
-#else
 mkdir -pv $WEST_CURRENT_SEG_DATA_REF
 cd $WEST_CURRENT_SEG_DATA_REF
-#fi
-
 ############################## Run the dynamics ################################
 # For BNGL run_network using SSA
 # run_network options
@@ -57,19 +48,10 @@ cd $WEST_CURRENT_SEG_DATA_REF
 # 2 steps and tau was set to 10, so 5 was step size and 2 was number of steps
 if [ "$WEST_CURRENT_SEG_INITPOINT_TYPE" = "SEG_INITPOINT_CONTINUES" ]; then
   ln -sv $WEST_PARENT_DATA_REF/seg_end.net ./parent.net
-  $timeTaken $RunNet -o ./seg -p ssa -h $WEST_RAND16 --cdat 0 --fdat 0 -x -e -g ./parent.net ./parent.net 5000 2
+  $RunNet -o ./seg -p ssa -h $WEST_RAND16 --cdat 0 --fdat 0 -x -e -g ./parent.net ./parent.net 5000 2
   cat seg.gdat > $WEST_PCOORD_RETURN
-  cat time_taken.txt > $WEST_TIME_RETURN
-  #cat seg.gdat > $WEST_CONCS_RETURN
 elif [ "$WEST_CURRENT_SEG_INITPOINT_TYPE" = "SEG_INITPOINT_NEWTRAJ" ]; then
   ln -sv $WEST_PARENT_DATA_REF ./parent.net
-  $timeTaken $RunNet -o ./seg -p ssa -h $WEST_RAND16 --cdat 0 --fdat 0 -e -g ./parent.net ./parent.net 5000 2
+  $RunNet -o ./seg -p ssa -h $WEST_RAND16 --cdat 0 --fdat 0 -e -g ./parent.net ./parent.net 5000 2
   tail -n -2 seg.gdat > $WEST_PCOORD_RETURN
-  cat time_taken.txt > $WEST_TIME_RETURN
-  #tail -n -2 seg.gdat > $WEST_CONCS_RETURN
 fi
-
-#if [[ -n $SCRATCH ]];then
-#  cp ${SCRATCH}/$WEST_CURRENT_SEG_DATA_REF/seg_end.net $WEST_CURRENT_SEG_DATA_REF/.
-#  rm -rf ${SCRATCH}/$WEST_CURRENT_SEG_DATA_REF
-#fi
