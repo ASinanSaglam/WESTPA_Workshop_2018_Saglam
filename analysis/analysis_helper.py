@@ -18,5 +18,5 @@ def get_bin_labels(assign):
     for ibstr, bstr in enumerate(bin_labels_str):
         st, ed = bstr.find('['), bstr.find(']')
         bin_labels.append(eval(bstr[st:ed+1]))
-    bin_labels = np.array(bin_labels[1:])
+    bin_labels = np.array(bin_labels[:])
     return bin_labels
