@@ -13,6 +13,8 @@ def symmetrize(mat):
     smat = 0.5*(mat+mat.T)
     return smat
 
+### VORONOI BINNING FUNCIONS ### 
+# Functions below are to plot voronoi bins, you can ignore them if you don't care
 def get_bin_labels(assign):
     bin_labels_str = assign['bin_labels'][...]
     bin_labels = []
@@ -24,7 +26,8 @@ def get_bin_labels(assign):
 
 def load_mapper(file_name, iter_no):
     '''
-    Loads a bin mapper from a given master WESTPA h5 file and a given iteration
+    Loads a bin mapper from a given master WESTPA h5 file and a given iteration.
+    Code mostly taken from main WESTPA code.
     '''
     h = h5py.File(file_name, 'r')
     if iter_no:
@@ -58,6 +61,14 @@ def vor_overlay(pylab, hfile, iiter=None):
     axes = pylab.gca()
     axes.add_collection(lines)
 
+# Functions below are for plotting voronoi bins and from Josh Adelman 
+# (@synapticarbors on GitHub) and the following:
+# -----------------------------------------------------------------------------
+# Voronoi diagram from a list of points
+# Copyright (C) 2011  Nicolas P. Rougier
+#
+# Distributed under the terms of the BSD License.
+# -----------------------------------------------------------------------------
 def circumcircle(P1,P2,P3):
     ''' 
     Adapted from:
