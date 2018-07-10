@@ -1,5 +1,6 @@
 import numpy as np
 import h5py, pickle
+import matplotlib
 
 def row_normalize(mat):
     rnmat = np.zeros(mat.shape)
