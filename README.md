@@ -41,7 +41,7 @@ which python
 ```
 and make sure it points to the anaconda python 2.7 you installed.
 
-4. Once the setup completes, navigate to the examples folder and clone the tutorial:
+4. Once the setup is complete, navigate to the examples folder and clone the tutorial:
 ```
 cd lib/examples
 git clone https://github.com/ASinanSaglam/WESTPA_Workshop_2018_Saglam.git
@@ -53,17 +53,16 @@ cd WESTPA_Workshop_2018_Saglam
 ./init.sh
 ./run.sh --n-workers X
 ```
-where X is the number of cores you want used. This took about 10-15 minutes on 4 cores for me. Some of the analysis will expect 100 iterations. The analysis/pre-prepped_results folder contains all the files you will need for analysis in case something goes wrong with the simulation or if you just want to see the analysis.
+where X is the number of cores you want WESTPA to use. This took about 15 minutes on 4 cores for me on a Xeon @3.5GHz. Some of the analysis will expect 100 iterations, you might have to adjust the notebook if you run less and decide to use your own data. The analysis/pre-prepped_results folder contains all the files you will need for analysis in case something goes wrong with the simulation or if you just want to see the analysis.
 
 6. Once the simulation is complete, navigate to the analysis folder and run all of the analysis on either the master h5 file you generated (../west.h5) or the pre-calculated one I provide (pre-prepped_results/west.h5)
 ```
 cd analysis
 ./run_all_analysis.sh ../west.h5
 ```
-This should all run without issues if you have 100 iterations or pointed to the h5 file I provided. 
 
-7. Finally, you can take a look at the Jupyter notebook that goes with this tutorial by running the following:
+7. Finally, you can take a look at the Jupyter notebook that goes with this tutorial by running the following when you are in the analysis folder:
 ```
 jupyter notebook
 ```
-Jupyter comes with Anaconda python and this should just run. Once you open up the file navigator, just open analysis.ipynb. 
+Jupyter comes with Anaconda python so you don't need to install it. Once you have the notebook running on a browser and you are on the file navigator screen, open analysis.ipynb to access the analysis notebook.
