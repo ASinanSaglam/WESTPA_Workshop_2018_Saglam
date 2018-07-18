@@ -9,7 +9,7 @@ Instructions:
   * [PyEMMA](http://emma-project.org/latest/INSTALL.html)
   * [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409). A statically compiled binary is included in this tutorial.
   
-I suggest using the following instructions for acquiring and installing dependencies: 
+I suggest using the following instructions (especially for Linux) for acquiring and installing dependencies: 
 
 1. Install Anaconda python using (link is for linux, 64bit version):
 ```
