@@ -55,6 +55,8 @@ cd WESTPA_Workshop_2018_Saglam
 ```
 where X is the number of cores you want WESTPA to use. This took about 15 minutes on 4 cores for me on a Xeon @3.5GHz. Some of the analysis will expect 100 iterations, you might have to adjust the notebook if you run less and decide to use your own data. The analysis/pre-prepped_results folder contains all the files you will need for analysis in case something goes wrong with the simulation or if you just want to see the analysis.
 
+Optional note for 2018 workshop attendees: If you are coming to the 2018 WESTPA workshop and interested in systems biology, you will have temporary access to the [H2P cluster](https://crc.pitt.edu/h2p) for the workshop simulations. You can follow almost the same instructions up to this point in the cluster. To run the simulation, just edit env.sh to uncomment the two variable definitions SCRATCH and make sure WEST_PYTHON points directly to the Anaconda python you installed. Once that is done you can simply submit the job with ```sbatch run_H2P.sh``` to run the simulation on a single node with 48 cores. For non-attendees this is also a sample submittion script for single node jobs. Note, to make use of multi-node simulations, you will have to use other work managers. Please visit [the WESTPA wiki](https://github.com/westpa/westpa/wiki/Running-WESTPA-in-a-multi-node-environment) for more information. 
+
 6. Once the simulation is complete, navigate to the analysis folder and run all of the analysis on either the master h5 file you generated (../west.h5) or the pre-calculated one I provide (pre-prepped_results/west.h5)
 ```
 cd analysis
