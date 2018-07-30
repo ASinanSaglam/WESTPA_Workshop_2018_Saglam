@@ -4,9 +4,8 @@ This is a mostly self-contained tutorial to run BNG simulations coupled with WES
 
 Instructions: 
 * There are two options to run this tutorial, you can either build the dependencies yourself or try out building a [docker](https://www.docker.com/) image from the Dockerfile provided in this tutorial, under docker folder. 
-  * To build the image in linux just copy the Dockerfile to a folder and do ```docker build -t=westpa_wshop```. 
-  * Once the image is built you can start an interactive session with ```docker run -it westpa_wshop```.
-  * You can now follow step 5 to run the simulation. 
+  * To download image do ```docker run -it asinansaglam/westpa_workshop```
+  * Once the image downloads you can follow step 5 to run the simulation
 * If you want to build the dependencies you will need:
   * [Anaconda python distribution](https://www.anaconda.com/download/)
   * [WESTPA](https://github.com/westpa/westpa)
