@@ -1,6 +1,6 @@
 2018 WESTPA Workshop tutorial by Ali Sinan Saglam, uses WESTPA and BioNetGen
 
-This is a mostly self-contained tutorial to run BNG simulations coupled with WESTPA and some example analysis that can be done.
+This is a mostly self-contained tutorial to run BNG simulations coupled with WESTPA and some example analysis that can be done. There are two components, the main folder contains a sample simulation that can be ran once placed under a WESTPA installation and a [Jupyter notebook containing sample analysis](https://github.com/ASinanSaglam/WESTPA_Workshop_2018_Saglam/blob/master/analysis/analysis.ipynb).
 
 Instructions: 
 * There are two options to run this tutorial, you can either run a [docker](https://www.docker.com/community-edition) container or build the dependencies. For docker, first install docker software then follow these instructions:
