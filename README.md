@@ -3,7 +3,7 @@
 This is a mostly self-contained tutorial to run BNG simulations coupled with WESTPA and some example analysis that can be done.
 
 Instructions: 
-* There are two options to run this tutorial, you can either run a [docker](https://www.docker.com/community-edition) container or build the dependencies. 
+* There are two options to run this tutorial, you can either run a [docker](https://www.docker.com/community-edition) container or build the dependencies. For docker, first install docker software then follow these instructions:
   * To download image do ```docker run -it asinansaglam/westpa_workshop```
   * Once the image downloads you can follow step 5 to run the simulation
   * If you also want to run the Jupyter notebook do ```docker run -it -p 8888:8888 asinansaglam/westpa_workshop``` when running the docker image and when you are running the notebook do ```./docker_notebook.sh``` which is just running the following ```jupyter notebook --ip="*" --port=8888 --no-browser --notebook-dir=$PWD --allow-root```. 
