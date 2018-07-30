@@ -6,6 +6,10 @@ Instructions:
 * There are two options to run this tutorial, you can either run a [docker](https://www.docker.com/) container or build the dependencies. 
   * To download image do ```docker run -it asinansaglam/westpa_workshop```
   * Once the image downloads you can follow step 5 to run the simulation
+  * If you also want to run the Jupyter notebook do ```docker run -it -p 8888:8888 asinansaglam/westpa_workshop``` when running the docker image and then you are running the notebook do ```jupyter notebook --ip="*" --port=8888 --no-browser --notebook-dir=$PWD --allow-root```. 
+    * Depending if you are running a docker VM or not these options might change slightly. Then you can go to ```http://localhost:8888``` or ```http://<DOCKER_MACHINE_IP>:8888``` to get to your Jupyter notebook. 
+    * If the notebook is asking for a key you can copy paste the token given to you once you start up the Jupyter notebook. 
+
 * If you want to build the dependencies you will need:
   * [Anaconda python distribution](https://www.anaconda.com/download/)
   * [WESTPA](https://github.com/westpa/westpa)
