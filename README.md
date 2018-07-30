@@ -3,7 +3,12 @@
 This is a mostly self-contained tutorial to run BNG simulations coupled with WESTPA and some example analysis that can be done.
 
 Instructions: 
-* For this tutorial you will need:
+* There are two options to run this tutorial, you can either build the dependencies yourself or try out building a [docker](https://www.docker.com/) image from the Dockerfile provided in this tutorial, under docker folder. 
+  * To build the image in linux just copy the Dockerfile to a folder and do ```docker build -t=westpa_wshop```. 
+  * Once the image is built you can start an interactive session with ```docker run -it westpa_wshop```.
+  * In the interactive session do ```cd /home/test/westpa``` and run ```./setup.sh```.
+  * Once the installation is done do ```cd lib/examples/WESTPA_Workshop_2018_Saglam``` and follow step 5 to run the simulation. 
+* If you want to build the dependencies you will need:
   * [Anaconda python distribution](https://www.anaconda.com/download/)
   * [WESTPA](https://github.com/westpa/westpa)
   * [PyEMMA](http://emma-project.org/latest/INSTALL.html)
