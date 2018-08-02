@@ -22,10 +22,8 @@ class System(WESTSystem):
 
         centers = np.zeros((self.nbins,self.pcoord_ndim),dtype=self.pcoord_dtype)
         # Using the values from the inital point
-        centers[0,0] = 4.0
-        centers[0,1] = 18.0
-        centers[0,4] = 1.0
-        centers[0,6] = 1.0
+        i = np.loadtxt('bngl_conf/init.gdat')
+        centers[0] = i[1:]
 
         self.bin_mapper = VoronoiBinMapper(dfunc, centers)
         self.bin_target_counts = np.empty((self.bin_mapper.nbins,), np.int)
